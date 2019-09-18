@@ -1,4 +1,5 @@
 package com.tanju.designpatterns.creational.builder.model;
 
-public class Type {
+public enum Type {
+    SPORT, SUV, TRUCK
 }

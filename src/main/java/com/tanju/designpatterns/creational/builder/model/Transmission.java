@@ -1,4 +1,5 @@
 package com.tanju.designpatterns.creational.builder.model;
 
-public class Transmission {
+public enum Transmission {
+    MANUAL, AUTO
 }

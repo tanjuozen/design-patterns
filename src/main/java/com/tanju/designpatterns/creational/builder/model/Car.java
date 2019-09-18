@@ -1,5 +1,8 @@
 package com.tanju.designpatterns.creational.builder.model;
 
+import lombok.Data;
+
+@Data
 public class Car {
 
     private final Type type;
@@ -8,7 +11,6 @@ public class Car {
     private final Transmission transmission;
     private final TripComputer tripComputer;
     private final GpsNavigator gpsNavigator;
-    private double fuel = 0;
 
     public Car(Type type, int seats, Engine engine, Transmission transmission, TripComputer tripComputer, GpsNavigator gpsNavigator) {
         this.type = type;
@@ -41,13 +43,5 @@ public class Car {
 
     public GpsNavigator getGpsNavigator() {
         return gpsNavigator;
-    }
-
-    public double getFuel() {
-        return fuel;
-    }
-
-    public void setFuel(double fuel) {
-        this.fuel = fuel;
     }
 }

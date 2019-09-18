@@ -1,11 +1,6 @@
 package com.tanju.designpatterns.creational.builder;
 
-import com.tanju.designpatterns.creational.builder.model.Car;
-import com.tanju.designpatterns.creational.builder.model.Engine;
-import com.tanju.designpatterns.creational.builder.model.GpsNavigator;
-import com.tanju.designpatterns.creational.builder.model.Transmission;
-import com.tanju.designpatterns.creational.builder.model.TripComputer;
-import com.tanju.designpatterns.creational.builder.model.Type;
+import com.tanju.designpatterns.creational.builder.model.*;
 
 public class CarBuilder implements Builder {
 

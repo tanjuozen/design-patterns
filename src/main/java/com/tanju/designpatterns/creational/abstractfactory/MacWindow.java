@@ -10,7 +10,7 @@ public class MacWindow implements Window {
 
     @Override
     public String getTitle() {
-        if(this.title == null) {
+        if (this.title == null) {
             return "NO TITLE";
         }
         return this.title;
