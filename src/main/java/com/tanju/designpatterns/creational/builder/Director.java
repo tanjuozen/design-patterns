@@ -12,4 +12,13 @@ public class Director {
         builder.setTripComputer(new TripComputer(65));
         builder.setEngine(new Engine(2.0f, 150));
     }
+
+    public void makeFamilyCar(Builder builder) {
+        builder.setType(Type.SUV);
+        builder.setSeats(7);
+        builder.setTransmission(Transmission.AUTO);
+        builder.setGpsNavigator(new GpsNavigator("Washington"));
+        builder.setTripComputer(new TripComputer(70));
+        builder.setEngine(new Engine(3.0f, 200));
+    }
 }
