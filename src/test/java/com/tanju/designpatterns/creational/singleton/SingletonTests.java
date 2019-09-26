@@ -1,5 +1,6 @@
 package com.tanju.designpatterns.creational.singleton;
 
+import org.junit.After;
 import org.junit.Test;
 
 import java.util.concurrent.*;
@@ -8,9 +9,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SingletonTests {
 
+    private ExecutorService executorService;
+
     @Test
     public void testSingletonWithMultiThreads() throws ExecutionException, InterruptedException {
-        final ExecutorService executorService = Executors.newFixedThreadPool(2);
+        executorService = Executors.newFixedThreadPool(2);
         Future<String> submitFoo = executorService.submit(new ThreadFoo());
         Future<String> submitBar = executorService.submit(new ThreadBar());
 
@@ -18,10 +21,15 @@ public class SingletonTests {
         assertThat(submitBar.get()).isEqualTo("FOO");
     }
 
+    @After
+    public void tearDown() {
+        executorService.shutdown();
+    }
+
     private class ThreadFoo implements Callable<String> {
 
         @Override
-        public String call() throws Exception {
+        public String call() {
             Singleton singleton = Singleton.getInstance("FOO");
             return singleton.getValue();
         }
@@ -30,7 +38,7 @@ public class SingletonTests {
     private class ThreadBar implements Callable<String> {
 
         @Override
-        public String call() throws Exception {
+        public String call() {
             Singleton singleton = Singleton.getInstance("BAR");
             return singleton.getValue();
         }
