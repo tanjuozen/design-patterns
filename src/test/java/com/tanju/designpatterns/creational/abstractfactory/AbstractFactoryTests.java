@@ -7,13 +7,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-public class WidgetFactoryTests {
+public class AbstractFactoryTests {
 
     @Test
     public void testMacWidgetFactory() {
-        WidgetFactory factory = MacWidgetFactory.getInstance();
-        ScrollBar scrollBar = factory.createScrollBar();
-        Window window = factory.createWindow();
+        WidgetFactory abstractFactory = MacWidgetFactory.getInstance();
+        ScrollBar scrollBar = abstractFactory.createScrollBar();
+        Window window = abstractFactory.createWindow();
 
         assertThat(scrollBar).isNotNull();
         assertThat(scrollBar).isInstanceOf(MacScrollBar.class);

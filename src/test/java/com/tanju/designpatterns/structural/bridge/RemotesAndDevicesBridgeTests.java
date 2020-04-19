@@ -8,7 +8,7 @@ public class RemotesAndDevicesBridgeTests {
 
     @Test
     public void testBasicRemote() {
-        TV tv = new TV();
+        Device tv = new TV();
         BasicRemote basicRemote = new BasicRemote(tv);
 
         basicRemote.power();
@@ -22,7 +22,7 @@ public class RemotesAndDevicesBridgeTests {
 
     @Test
     public void testAdvancedRemote() {
-        Radio radio = new Radio();
+        Device radio = new Radio();
         AdvancedRemote advancedRemote = new AdvancedRemote(radio);
 
         advancedRemote.power();
