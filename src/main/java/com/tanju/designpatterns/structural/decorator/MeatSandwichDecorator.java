@@ -2,7 +2,7 @@ package com.tanju.designpatterns.structural.decorator;
 
 public class MeatSandwichDecorator extends SandwichDecorator {
 
-    public MeatSandwichDecorator(SimpleSandwich customSandwich) {
+    public MeatSandwichDecorator(Sandwich customSandwich) {
         super(customSandwich);
     }
 
